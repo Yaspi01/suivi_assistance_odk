@@ -1,0 +1,96 @@
+<div class="row" id="tout">
+<div class="col-lg-6 col-md-12">
+    <div class="card">
+      <div class="card-header card-header-text card-header-warning">
+        <div class="card-text">
+          <h4 class="card-title">Ressources Formateurs</h4>
+          
+        </div>
+      </div>
+      <div class="card-body table-responsive">
+        <table class="table table-hover">
+          <thead class="text-warning">
+            
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>URL</th>
+            <th>PDF</th>
+
+          </thead>
+          <tbody >
+            
+            <tr *ngFor="let data of listparApprenant">
+            <td>{{data.formateur.nom}}</td>
+            <td>{{data.formateur.prenom}}</td>
+             <td><a style="color: blue;" href="{{data.lien}}">{{data.lien}}</a></td>
+              <td>{{data.pdf}}</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6 col-md-12">
+    <div class="card">
+      <div class="card-header mes card-header-tabs">
+        <div class="nav-tabs-navigation">
+          <div class="nav-tabs-wrapper">
+            <span class="nav-tabs-title" style="font-weight: bold; font-size: 15px;">Mes Ressources</span>
+            <ul class="nav nav-tabs" data-tabs="tabs">
+
+              <li class="nav-item">
+                <div class="btn-group" style="margin-left: 250px;">
+                  <a routerLink="/userurl" id="addRow" class="btn btn-warning">
+                      URL  <i class="fa fa-plus"></i>
+                  </a>
+              </div>
+              </li>
+              <li class="nav-item">
+                <div class="btn-group" style="margin-left: 250px;">
+                  <a routerLink="/userRessource" id="addRow" class="btn btn-warning">
+                      PDF <i class="fa fa-plus"></i>
+                  </a>
+              </div>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="tab-content">
+          <div class="tab-pane active" id="profile">
+            <table class="table">
+                <thead style="color: orange;">
+                    <th>URL</th>
+                    <th>PDF</th>
+                </thead>
+              <tbody *ngFor="let item of listRessource">
+                
+                
+                
+                
+                <tr>
+                  
+                  <td> <a href="{{item.url}}">{{item.url}}</a> </td>
+                  <td>{{item.pdf}}</td>
+                  <td class="td-actions text-right">
+                    <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
+                      <i class="material-icons">edit</i>
+                    </button>
+                    <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
+                      <i class="material-icons">close</i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+         
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

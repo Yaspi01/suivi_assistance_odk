@@ -1,0 +1,103 @@
+<div class="wrapper wrapper-full-page">
+    <div class="page-header register-page header-filter" filter-color="black" style="background-image: url('../../assets/img/register.jpg')">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 ml-auto mr-auto">
+            <div class="card card-signup">
+              <h2 class="card-title text-center">Rendu</h2>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-5 ml-auto">
+                    <div class="info info-horizontal">
+                      <div class="icon icon-rose" style="color:#fb9415 ;">
+                        <i class="material-icons">outbox</i>
+                      </div>
+                      <div class="description">
+                        <h4 class="info-title">{{dataRendu.type}}</h4>
+                        
+                      </div>
+                    </div>
+                    <div class="info info-horizontal">
+                      <div class="icon icon-rose" style="color:#fb9415 ;">
+                        <i class="material-icons">school</i>
+                      </div>
+                      <div class="description">
+                        <h4 class="info-title">{{dataEvaluation.niveau}}</h4>
+                        
+                      </div>
+                    </div>
+                    <div style="margin-top: 10px;">
+                    <h5 style="font-size: 15px;">De 0 à 9 pour niveau Faible</h5>
+                    <h5 style="font-size: 15px;">De 10 à 14 pour niveau Moyen</h5>
+                    <h5 style="font-size: 15px;">De 15 à 20 pour niveau Avancé</h5>
+                    </div>
+                  </div>
+                  <div class="col-md-5 mr-auto">
+                <img id="register" src="../assets/img/Page-1.png" width="100px">
+                <form id="form_sample_2" class="form-horizontal" novalidate="novalidate" #editForm="ngForm" >
+                    
+                    
+                    
+                        <div class="form-group  has-default">
+                          
+                          <!-- <span class="input-group-text">
+                            <i class="material-icons">face</i>
+                          </span>
+                            <select  class="form-control" name="niveau" [(ngModel)]="dataEvaluation.niveau" >
+                                <option value="Faible">Faible</option>
+                                <option value="Faible">Faible</option>
+                                <option value="Moyen">Moyen</option>
+                                <option value="Avancé">Avancé</option>
+                               
+                            </select> -->
+                            <!-- <input type="text" class="form-control" name="niveau" [(ngModel)]="dataEvaluation.niveau"> -->
+                         <h4>Note</h4>
+                        </div>
+                        <div class="col aaa">
+                          <!-- <select  class="form-control"  formControlName="apprenant">
+                            <option></option>
+                            <option  value="{{listApprenant.id}}">{{listApprenant.nom}}</option> 
+                        </select> -->
+                        <input type="text" class="form-control" name="note" [(ngModel)]="dataEvaluation.note">
+                        </div>
+
+                       
+
+                    <!-- <input type="hidden" class="form-control" [(ngModel)]="loginData.id" name="userId" /> -->
+
+                    <div class="form-group">
+                        <div class="offset-md-3 col-md-9" style="padding: 30px; padding-left: 20px;">
+                            <button type="submit" (click)="onUpdate()" class="btn btn-warning me-5" >
+                                Modifier Niveau
+                            </button>
+
+        
+                        </div>
+                    </div>
+                </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" style="padding-top: -5px;">
+            <div class="col-4" *ngFor="let item of list">
+              <div class="card">
+                <div class="card-body text-center">
+                  <code><a href="{{item.url}}">{{item.url}}</a></code>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <footer class="footer">
+        <div class="container">
+          <nav class="float-left">
+            
+          </nav>
+          
+        </div>
+      </footer>
+    </div>
+  </div>

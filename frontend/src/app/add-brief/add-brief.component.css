@@ -1,0 +1,33 @@
+#register{
+    display: block;
+    margin: auto;
+    padding: auto;
+}
+.btn{
+background-color: #fb9415 ;
+}
+
+.aaa{
+    margin-right: 15px;
+    padding: 0px;
+}
+
+.bb{
+    margin-left: 15px;
+}
+#ddd{
+    margin-top: 10px;
+}
+.ccc{
+    margin-top: 10px;
+    margin-left: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.fil{
+    font-size: 12px;
+}
+#vvv{
+    background-color: #fb1515;
+}

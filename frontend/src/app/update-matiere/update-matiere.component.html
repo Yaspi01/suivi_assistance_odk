@@ -1,0 +1,48 @@
+<div class="wrapper wrapper-full-page">
+    <div class="page-header register-page header-filter" filter-color="black" style="background-image: url('../../assets/img/register.jpg')">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 ml-auto mr-auto">
+            <div class="card card-signup">
+              <h2 class="card-title text-center">Ajouter Brief</h2>
+              <div class="card-body">
+                <div class="row">
+                  <img src="../assets/img/Page.png" style="padding-right: 150px; padding-left: 50px;">
+                  <div class="col-md-5 mr-auto">
+                <img id="register" src="../assets/img/Page-1.png" width="100px">
+                    <form class="form"  #editForm="ngForm" novalidate>
+                      
+                      <div class="form-group has-default">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">
+                              <i class="material-icons">description</i>
+                            </span>
+                          </div>
+                          <input type="text" class="form-control"  name="nom_matiere" [(ngModel)]="dataMatiere.nom_matiere">
+                        </div>
+                      </div>
+                      
+                    
+                      
+                    <button type="submit" (click)="onUpdate()" class="btn btn-warning me-5" >
+                     Envoyer
+                  </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="container">
+          <nav class="float-left">
+            
+          </nav>
+          
+        </div>
+      </footer>
+    </div>
+  </div>

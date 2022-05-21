@@ -1,0 +1,23 @@
+nav{
+    background-color: #F99723;
+}
+.dropdown-menu :hover{
+   background-color: #F99723;
+}
+.active-link{
+    border-left: #F99723 solid 5px;
+    border-right: #F99723 solid 5px;
+   border-radius: 5px;
+}
+#nav-item :hover{
+    background-color: #F99723;
+}
+
+
+#re :hover{
+    background-color: #F99723; 
+    border-radius: 20px;
+}
+/* .active-link a{
+    margin: 0;
+} */

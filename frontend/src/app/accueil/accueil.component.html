@@ -1,0 +1,164 @@
+<div class="page-content-wrapper  mt-3" style="padding-top: 50px;">
+    <div class="page-content">
+        
+        <div class="row">
+            <div class="col-sm total a">
+              <div class="col-sm aa">
+                <i class="fa fa-users" aria-hidden="true" style="color: #000;"></i>
+              </div>
+              <div class="col-sm bb" routerLink="/listMaApprenant">
+                <h1>{{listApprenant.length}}</h1>
+                <p style="color: #000;font-weight: bold;">Apprenants</p>
+              </div>
+            </div>
+            <div class="col-sm total a">
+                <div class="col-sm aa">
+                  <i class="fa fa-users" aria-hidden="true" style="color: #000;"></i>
+                </div>
+                <div class="col-sm bb">
+                  <h1>{{listApprenantAssister.length}}</h1>
+                  <p style="color: #000;font-weight: bold;">Apprenants Assister</p>
+                </div>
+              </div>
+            
+            <div class="col-sm total a">
+                <div class="col-sm aa">
+                  <i class="fa fa-users" aria-hidden="true" style="color: #000;"></i>
+                </div>
+                <div class="col-sm bb">
+                  <h1>{{listApprenantNonAssister.length}}</h1>
+                  <p style="color: #000;font-weight: bold;">Apprenants Non Assister</p>
+                </div>
+              </div>
+          </div>
+        
+        
+        <!-- apprès card -->
+        			<!-- start page content -->
+                    <div class="page-content-wrapper">
+                        <div class="page-content">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card card-box">
+                                        
+                                        <div class="card-body ">
+                                            <div class="row p-b-20">
+                                                <div class="col-md-6 col-sm-6 col-6">
+                                                    <div class="btn-group">
+                                                        <a href="/addApprenant" id="addRow" class="btn btn-warning">
+                                                            Ajouter  <i class="fa fa-plus"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="btn-group" style="padding-left: 30px;">
+                                                        <a href="/addApprenantExcel" id="addRow" class="btn btn-warning">
+                                                            Avec Excel  <i class="fa fa-plus"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="tools">
+                                                    <!-- Search form -->
+                                                   
+                                                    <div class="md-form mt-0">
+                                                        <input class="form-control mr-sm-2" type="text" [(ngModel)]="searchText"
+                                                            autocomplete="off" placeholder="Rechercher">
+                                                            
+                                                    </div>
+                                              
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            
+                                            <div class="table-scrollable" id="example4">
+                                            
+                                        
+                                            <table class="table table-hover table-checkable order-column full-width" >
+                                                <thead>
+                                                    <tr>
+                                                        <th class="center"></th>
+                                                        <th class="center" style="color: #000;font-weight: bold;"> Nom </th>
+                                                        <th class="center"style="color: #000;font-weight: bold;"> Prénom </th>
+                                                        
+                                                        <th class="center"style="color: #000;font-weight: bold;"> Email </th>
+                                                        <th class="center"style="color: #000;font-weight: bold;"> Téléphone </th>
+                                                        
+                                                        
+                                                        <th class="etat" style="color: #000;font-weight: bold;">Etat</th>
+                                                        <th class="action" style="color: #000;font-weight: bold;"> Action </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody  *ngFor="let item of listApprenant | filter:searchText | paginate : {itemsPerPage : 5, currentPage: p}" >
+                                                    <tr class="odd gradeX" *ngIf="item.supprimer==0">
+                                                        <td class="user-circle-img">
+                                                                <img src="../assets/img/Groupe2.png" width="50px" alt="">
+                                                        </td>
+                                                        <td (click)="onSelectAdmin(item)" class="center"><span></span>{{item.nom}}</td>
+                                                        <td  (click)="onSelectAdmin(item)" class="center"><span></span>{{item.prenom}}</td>
+                                                        <td (click)="onSelectAdmin(item)" class="center"><span ></span>{{item.email}}</td>
+                                                        <td (click)="onSelectAdmin(item)" class="center"><span></span>{{item.telephone}}</td>
+                                                        <!-- <td (click)="onSelectAdmin(item)" class="center"><span></span>{{item.etat}}</td> -->
+                                                        <td class="td" (click)="onSelectAdmin(item)">
+                                                            <span *ngIf="item.etat==='Activer'"><img title="ACTIVER" src="../assets/img/employee.png" width="30px" alt=""> </span>
+                                                            <span *ngIf="item.etat==='Desactiver'"><img title="DESACTIVER" src="../assets/img/employee1.png" width="30px" alt=""> </span>
+                                                            
+                                                            </td>
+
+                                                       
+                                                        <td class="center">
+                                                            
+                                                            <button class="btn btn-link btn-warning btn-just-icon edit" routerLink="/updateApprenant/{{item.id}}" ><i class="material-icons">edit</i></button>
+                                                            <a class="btn btn-link btn-danger btn-just-icon remove" (click)="openConfirmationDialog(item.id)"><i class="material-icons">close</i></a>
+                                                            <a class="btn btn-link btn-info btn-just-icon like" id="openUserInfo" data-toggle="modal" data-target="#myModal" ></a>
+                                                          </td>
+                                                    </tr>
+        
+                                                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                          <div class="modal-content">
+                                                            <div class="modal-header">
+                                                              <h4 class="modal-title">{{selectedAdmin?.nom}} {{selectedAdmin?.prenom}} </h4>
+                                                              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                                                <i class="material-icons">clear</i>
+                                                              </button>
+                                                            </div>
+                                                            <ul class="list-group list-group-unbordered" >
+                                           
+                                                                <li class="list-group-item">
+                                                                    <b>Email  </b> <a class="pull-right">{{selectedAdmin?.email}}</a>
+                                                                </li>
+                                                                <li class="list-group-item">
+                                                                    <b>Etat </b> <a class="pull-right">{{selectedAdmin?.etat}}</a>
+                                                                </li>
+                                                                <li class="list-group-item">
+                                                                    <b>Login</b> <a class="pull-right">{{selectedAdmin?.login}}</a>
+                                                                </li>
+                                                                <li class="list-group-item">
+                                                                    <b>Mot de Passe</b> <a class="pull-right">{{selectedAdmin?.motDePass}}</a>
+                                                                </li>
+                                                                <li class="list-group-item">
+                                                                    <b>Téléphone</b> <a class="pull-right">{{selectedAdmin?.telephone}}</a>
+                                                                </li>
+                                                   
+                                                               
+                                                            </ul>
+                                                            <div class="modal-footer">
+                                                              
+                                                              <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    
+        
+                                                    
+                                                </tbody>
+                                            </table>
+                                            <pagination-controls previousLabel="Precedent" nextLabel="Suivant" (pageChange)="p = $event"></pagination-controls>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <!-- end page content -->
+                        </div>
+                    </div> 

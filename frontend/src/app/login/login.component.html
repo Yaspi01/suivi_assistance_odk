@@ -1,0 +1,31 @@
+
+    <main class="login-design">
+      <div class="waves" style=" background-image: url('../assets/img/main_top.png');">
+        <img width="200px" src="../assets/img/Groupe33.png" alt="" />
+      </div>
+      <div class="login">
+        <div class="login-data">
+          <img width="200px" src="../assets/img/Page-1.png" alt="" />
+          <h1>AUTHENTIFICATION</h1>
+          <form action="#" class="login-form" #loginForm="ngForm"  (ngSubmit)="connexion(loginForm)" novalidate>
+            <div class="input-group">
+              <label class="input-fill">
+                <input type="email" placeholder= "Votre login" id="email" name ="username" autocomplete="nope" ngModel required />
+                
+                
+              </label>
+            </div>
+            <div class="input-group">
+              <label class="input-fill">
+                <input type="password"  placeholder= " votre mot de passse " name="password" ngModel id="password" required />
+                
+                
+              </label>
+            </div>
+            
+            <input type="submit" value="Connexion" class="btn-login" />
+          </form>
+        </div>
+      </div>
+    </main>
+

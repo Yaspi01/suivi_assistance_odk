@@ -1,0 +1,49 @@
+<div class="col-md-6" id="tout">
+    <div class="card ">
+      <div class="card-header ">
+        <h4 class="card-title">Projet :
+          <small class="description">{{dataBrief.type}}</small>
+        </h4>
+      </div>
+      <div class="card-body ">
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <!--
+                      color-classes: "nav-pills-primary", "nav-pills-info", "nav-pills-success", "nav-pills-warning","nav-pills-danger"
+                  -->
+            <ul class="nav nav-pills nav-pills-rose nav-pills-icons flex-column" role="tablist">
+              <li class="nav-item" style="background-color: #fb9415; ">
+                <a class="nav-link" data-toggle="tab" href="#link110" role="tablist" style="color: #000; font-weight: bold;">
+                  <i class="material-icons">person</i>{{dataBrief.formateur.nom}}
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#link111" role="tablist">
+                  <i class="material-icons">date_range</i>{{dataBrief.date}}
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#link111" role="tablist">
+                  
+                  <i class="material-icons">date_range</i><span><p>Rendu <br>au</p></span>{{dataBrief.dateRendu}}
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-8">
+            <div class="tab-content">
+              <div class="tab-pane active" id="link110">
+                {{dataBrief.description}}
+                
+              </div>
+              <div class="tab-pane" id="link111">
+                Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas.
+                <br>
+                <br>Dramatically maintain clicks-and-mortar solutions without functional solutions.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

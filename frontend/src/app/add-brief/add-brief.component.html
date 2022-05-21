@@ -1,0 +1,126 @@
+<div class="wrapper wrapper-full-page">
+  <div class="page-header register-page header-filter" filter-color="black" style="background-image: url('../../assets/img/register.jpg')">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 ml-auto mr-auto">
+          <div class="card card-signup">
+            <h2 class="card-title text-center">Ajouter Brief</h2>
+            <div class="card-body">
+              <div class="row">
+                <img src="../assets/img/Page.png" style="padding-right: 150px; padding-left: 50px;">
+                <div class="col-md-5 mr-auto">
+              <img id="register" src="../assets/img/Page-1.png" width="100px">
+                  <form class="form"  [formGroup]="formgroup" (ngSubmit)="ajouterBrief(formgroup)" novalidate>
+                    <div class="form-group has-default">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">
+                            <i class="material-icons">work</i>
+                          </span>
+                        </div>
+                        <input type="text" class="form-control" formControlName="type" placeholder="Titre...">
+                      </div>
+                    </div>
+                    <div   id="ddd">
+                      <div class="row">
+                        <div class="col-md-auto bb">
+                         <span class="input-group-text">
+                           <i class="material-icons">face</i>
+                         </span>
+                        </div>
+                        <div class="col aaa">
+                         <select  class="form-control"  formControlName="evaluation">
+                           <option value="">--Selectionner une evaluation--</option>
+                           <option *ngFor="let item of evaluations" value="{{item.id}}">{{item.matiere.nom_matiere}}</option> 
+                       </select>
+
+                       </div>
+                       
+                      </div>
+                         
+                     </div>
+                    
+                    <div class="form-group has-default">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">
+                            <i class="material-icons">description</i>
+                          </span>
+                        </div>
+                        <input type="text" class="form-control" formControlName="description" placeholder="Description...">
+                        
+                      </div>
+                    </div>
+                    <!-- <div class="col-md-6">  -->
+                      <div  >
+                       <div >
+                         <!-- <div class="col-md-auto bb">
+                          <span class="input-group-text">
+                            <i class="material-icons">face</i>
+                          </span>
+                         </div> -->
+                         <div >
+                          <!-- <select  class="form-control"  formControlName="apprenant">
+                            <option></option>
+                            <option  value="{{listApprenant.id}}">{{listApprenant.nom}}</option> 
+                        </select> -->
+                        <input type="hidden" class="form-control" formControlName="apprenant" ngModel="{{listApprenant.id}}" placeholder="Description...">
+                        </div>
+                        
+                       </div>
+                          
+                      </div>
+            
+
+                  <!-- </div> -->
+                  <div class="row ccc">
+                    <!-- <p id="aaa">
+                    
+                     <span >
+                       <label style="font-weight: bold;">image</label></span>
+                      <input #file  type="file" (change)="chargephoto(file.files)" class="form-control fil">                                             
+                    </p> -->
+                    <p>
+                      <span class="form-label" style="font-weight: bold; margin-top: 20px;">
+                        Image
+                      </span>
+                       <span class="form-control-wrap your-company">
+                        <input #file title="your-company" type="file" (change)="chargephoto(file.files)" class="form-control your-company">                                             </span>
+                      </p>
+                </div>
+
+                <div class="aaa">
+                  <label for="dateDebut">Date de Rendu</label>
+                  <input type="date" class="form-control" formControlName="dateRendu"/>
+                  
+              </div>
+              
+                  
+                    
+                  <button type="submit" class="btn btn-warning me-5" >
+                   Envoyer
+                </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <!-- <div class="container">
+        <nav class="float-left">
+          <ul>
+            <li>
+              <a href="https://www.creative-tim.com/">
+                Liste Rendu
+              </a>
+            </li>
+          </ul>
+        </nav>
+        
+      </div> -->
+    </footer>
+  </div>
+</div>

@@ -1,0 +1,89 @@
+
+    <!-- start page content -->
+    <div class="page-content-wrapper" style="padding-top: 55px;">
+        <div class="page-content">
+            <div class="col-md-12 col-sm-12">
+                <div class="card card-box">
+                    <div class="card-head">
+                        <header style="text-align: center; font-size: 20px; font-weight: bold; padding-bottom: 40px;">Nouveau Apprenant</header>
+                        
+                    </div>
+                    <div class="card-body" id="bar-parent2">
+                        <form id="form_sample_2" class="form-horizontal" [formGroup]="formgroup" (ngSubmit)="ajouter_apprenant(formgroup)" >
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="prenom">Prénom</label>
+                                    <input type="text" class="form-control"  formControlName="prenom" autocomplete="nope"   />
+                                    
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="nom">Nom</label>
+                                    <input type="text" class="form-control" formControlName="nom" autocomplete="nope" />
+                                    
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" class="form-control" formControlName="email"  class="form-control" autocomplete="nope" />
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="telephone" placeholder="00-00-00-00">Téléphone</label>
+                                        <input type="number"  class="form-control" id="tel" formControlName="telephone" autocomplete="nope"  required
+                                        [ngClass]="{ 'is-invalid': submitted && f.telephone.errors }"/>
+                                        
+                                        <div *ngIf="submitted && f.telephone.errors" class="invalid-feedback">
+                                            <div *ngIf="f.telephone.errors.required">telephone est requis</div>
+                                            <div *ngIf="f.telephone.errors.min">minimum 8</div>
+                                            <div *ngIf="f.telephone.errors.max">max 8</div>
+                                        </div>
+                                   
+                                </div>
+
+                            </div>
+                            </div>
+                        
+    
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="login">Login</label>
+                                    <input type="text" class="form-control"     formControlName="login"  autocomplete="nope"/>
+                                    
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="motDePass" style="padding-bottom: 5px;">Mot de passe</label>
+                                    <input type="password" class="form-control" formControlName="motDePass"  autocomplete="nope"  />
+                                </div>
+                                
+                            </div>
+    
+    
+                            <!-- <input type="hidden" class="form-control" [(ngModel)]="loginData.id" name="userId" /> -->
+    
+                            <div class="form-group">
+                                <div class="offset-md-3 col-md-9" style="padding: 30px; padding-left: 120px;">
+                                    <button type="submit" class="btn btn-warning me-5" >
+                                        Enregistrer
+                                    </button>
+    
+                                    <button type="reset" class="btn btn-danger ms-5">
+                                        Réinitialiser
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- end page content -->
+    <!-- CSS only -->
+
+    <!--     --------------After config                -->
+

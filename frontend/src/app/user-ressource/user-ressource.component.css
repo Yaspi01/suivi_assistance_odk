@@ -1,0 +1,14 @@
+.card-header{
+    background-color: #F99723;
+}
+#register{
+    display: block;
+    margin: auto;
+    padding: auto;
+}
+.btn{
+    background-color: #fb9415 ;
+    }
+.form-control :hover{
+    background-color: #F99723;
+}

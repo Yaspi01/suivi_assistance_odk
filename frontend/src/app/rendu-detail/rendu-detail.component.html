@@ -1,0 +1,90 @@
+<div class="wrapper wrapper-full-page">
+    <div class="page-header register-page header-filter" filter-color="black" style="background-image: url('../../assets/img/register.jpg')">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 ml-auto mr-auto">
+            <div class="card card-signup">
+              <h2 class="card-title text-center">Rendu</h2>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-5 ml-auto">
+                    <div class="info info-horizontal">
+                      <div class="icon icon-rose" style="color:#fb9415 ;">
+                        <i class="material-icons">outbox</i>
+                      </div>
+                      <div class="description">
+                        <h4 class="info-title">{{dataRendu.type}}</h4>
+                        <p class="description">
+                          {{dataRendu.description}}
+                        </p>
+                      </div>
+                    </div>
+                    
+                    
+                  </div>
+                  <div class="col-md-5 mr-auto">
+                <img id="register" src="../assets/img/Page-1.png" width="100px">
+                    <form class="form" [formGroup]="formgroup" (ngSubmit)="ajouterRendu(formgroup)">
+                      <div class="form-group has-default">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">
+                              <i class="material-icons">link</i>
+                            </span>
+                          </div>
+                          <input type="text" class="form-control" formControlName="url" placeholder="URL">
+                        </div>
+                      </div>
+                      <div class="form-group has-default">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">
+                              <i class="material-icons">message</i>
+                            </span>
+                          </div>
+                          <input type="text" class="form-control" formControlName="message" placeholder="Message...">
+                        </div>
+                      </div>
+                      <div class="form-group has-default">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">
+                              
+                            </span>
+                          </div>
+                          <input type="hidden" formControlName="brief" ngModel="{{dataRendu.id}}"  class="form-control">
+                        </div>
+                      </div>
+                      
+                      <div class="text-center">
+                        <button type="submit" class="btn btn-warning me-5" >
+                            Envoyer
+                         </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" style="padding-top: -5px;">
+            <div class="col-4" *ngFor="let item of list">
+              <div class="card">
+                <div class="card-body text-center">
+                  <code>{{item.url}}</code>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <footer class="footer">
+        <div class="container">
+          <nav class="float-left">
+            
+          </nav>
+          
+        </div>
+      </footer>
+    </div>
+  </div>

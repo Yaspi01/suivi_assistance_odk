@@ -1,0 +1,66 @@
+#card :hover{
+    background-color: rgb(243, 191, 94);
+}
+h3{
+    font-weight: bold;
+
+}
+.total{
+    display: flex;
+    margin: 20px;
+    text-align: center;
+    box-shadow: 0 0 40px 0 rgba(6, 104, 3, 0.2), 0 5px 5px 0 rgba(1, 88, 8, 0.24);
+}
+    .aa i{
+            font-size: 100px;
+          margin-top: 10px;
+        }
+   
+    
+    .bb h1{
+  
+        font-size: 50px;
+        margin-top: 20px;
+        font-weight: bold;
+    }
+    p{
+        font-size: 20px;
+        
+
+}    
+
+
+.a{
+    border-left: solid orange 30px;
+    border-top: solid  orange 10px;
+    border-radius: 10px;
+    
+    }
+    .aa i{
+       
+            color: orange;
+        }
+
+
+.b{
+    border-left: solid rgb(175, 175, 175) 30px;
+    
+
+}
+.aa i{
+
+        color: rgb(175, 175, 175);
+
+}
+
+.c{
+    border-left: solid #1D5F24 30px;
+}
+
+.aa i{
+
+        color: #1D5F24;
+}
+
+
+

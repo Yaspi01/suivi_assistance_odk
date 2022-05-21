@@ -1,0 +1,38 @@
+<div class="col-lg-6 col-md-12" id="tout">
+    <div class="card">
+      
+      <div class="card-header card-header-text card-header-warning">
+        <div class="card-text">
+          <h4 class="card-title" routerLink="/formapdf">PDF <i class="fa fa-plus"></i></h4>
+          
+        </div>
+        <div class="card-text" style="margin-left: 10px;">
+          <h4 class="card-title" routerLink="/formaressource">URL <i class="fa fa-plus"></i></h4>
+          
+        </div>
+      </div>
+      <div class="card-body table-responsive">
+        <table class="table table-hover">
+          <thead class="text-warning">
+            
+            <th>Nom Apprenant</th>
+            <th>Prenom Apprenant</th>
+            <th>URL</th>
+            <th>PDF</th>
+
+          </thead>
+          <tbody *ngFor="let item of listRessource">
+            
+            <tr>
+              <td>{{item.apprenant.nom}}</td>
+              <td> {{item.apprenant.prenom}} </td>
+              <td><a style="color: blue;" href="{{item.lien}}">{{item.lien}}</a></td>
+              <td>{{item.pdf}}</td>
+            </tr>
+            
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

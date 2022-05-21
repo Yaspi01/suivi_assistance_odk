@@ -1,0 +1,64 @@
+<div class="wrapper wrapper-full-page">
+    <div class="page-header register-page header-filter" filter-color="black" style="background-image: url('../../assets/img/register.jpg')">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 ml-auto mr-auto">
+            <div class="card card-signup">
+              <h2 class="card-title text-center">Ajouter  Matiere</h2>
+              <div class="card-body">
+                <div class="row">
+                  <img src="../assets/img/Page.png" style="padding-right: 150px; padding-left: 50px;">
+                  <div class="col-md-5 mr-auto">
+                    <img id="register" src="../assets/img/Page-1.png" width="100px">
+                    <form class="form"  [formGroup]="formulaire" (ngSubmit)="submitForm()" novalidate>
+                        
+                      <div class="form-group has-default">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">
+                              <i class="material-icons">description</i>
+                            </span>
+                          </div>
+                          <input type="text" class="form-control" id="titre" placeholder="Ajouter un titre"
+                          formControlName="nom_matiere" required>
+                        </div>
+                      </div>
+                      <div  style="margin-top: 20px;">
+                        <p>
+                        <span class="form-label" style="font-weight: bold; margin-top: 20px;">
+                          Image
+                        </span>
+                         <span class="form-control-wrap your-company">
+                          <input #file title="your-company" type="file" (change)="chargephoto(file.files)" class="form-control your-company">                                             </span>
+                        </p>
+                    </div>
+                      
+                    
+                      
+                    <button type="submit" class="btn btn-warning me-5" style="margin-top: 30px;" >
+                     Envoyer
+                  </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="container">
+          <nav class="float-left">
+            <ul>
+              <li>
+                <a href="https://www.creative-tim.com/">
+                  Liste Rendu
+                </a>
+              </li>
+            </ul>
+          </nav>
+          
+        </div>
+      </footer>
+    </div>
+  </div>

@@ -1,0 +1,29 @@
+
+<div class="row">
+    <div class="col-lg-3 col-xlg-3 col-md-12"></div>
+    <div class="col-lg-6 col-xlg-3 col-md-12">
+        <div class="card class">
+            <div class="card-body">
+                <form #fichier="ngForm" (ngSubmit)="addByFichier()" enctype="multipart/form-data">
+                    <div class="form-group mb-4">
+                        <label class="col-md-12 p-0">Fichier</label>
+                        <div class="col-md-12 border-bottom p-0">
+                            <!-- <input type="file" class="form-control p-0 border-0"> -->
+                        </div>
+                    </div>
+                    <input type="file" class="form-control p-0 border-0" (change)="onFileChange($event)" #inputFile
+                    ngModel required = true>
+                    <div class="form-group mb-4 row">
+                        <div class="col-sm-6">
+                            <button class="btn btn-danger" type="reset">Annuler</button>
+                        </div>
+                        <div class="col-sm-6">
+                            <button class="btn btn-success" type="submit">Valider</button>
+                        </div>
+                    </div>                            
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

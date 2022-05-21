@@ -1,0 +1,16 @@
+<div style="padding-top: 65px;">
+<div style="text-align: center; color: #000;">
+    <h2>Choisir un apprenant</h2>
+</div>
+<div class="row" >
+    <div class="col-4" *ngFor="let item of listApprenant">
+    <a routerLink="/addBrief/{{item.id}}">
+      <div class="card">
+        <div class="card-body text-center">
+          <code>{{item.prenom}} {{item.nom}}</code>
+        </div>
+      </div>
+    </a>
+    </div>
+  </div>
+</div>
